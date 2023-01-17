@@ -20,6 +20,7 @@ class HabitsViewController: UIViewController{
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = .white
         collectionView.register(HabitsCollectionViewCell.self, forCellWithReuseIdentifier: HabitsCollectionViewCell.collectionCellID)
+        collectionView.register(ProgressCollectionViewCell.self, forCellWithReuseIdentifier: ProgressCollectionViewCell.progressID)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,13 +70,15 @@ extension HabitsViewController{
 extension HabitsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        4
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitsCollectionViewCell.collectionCellID, for: indexPath) as! HabitsCollectionViewCell
-        return cell
-    }
+
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitsCollectionViewCell.collectionCellID, for: indexPath) as! HabitsCollectionViewCell
+            return cell
+        }
+
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        return CGSize(width: (UIScreen.main.bounds.width - 32), height: 130)

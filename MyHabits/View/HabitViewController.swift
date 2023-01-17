@@ -24,7 +24,7 @@ class HabitViewController: UIViewController {
     }
     
     @objc func cancelButton(){
-        
+        dismiss(animated: true)
     }
     
     @objc func saveButton(){
