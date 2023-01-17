@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA4DAB6429703DEC00B1119C /* HabitsCollectioViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DAB6329703DEC00B1119C /* HabitsCollectioViewCell.swift */; };
+		AA73181129765DD6002C9E3B /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73181029765DD6002C9E3B /* HabitViewController.swift */; };
 		AAA7A169297190A800001544 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7A168297190A800001544 /* InfoViewController.swift */; };
 		AAB3CA30296EE759006D872E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA2F296EE759006D872E /* AppDelegate.swift */; };
 		AAB3CA32296EE759006D872E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA31296EE759006D872E /* SceneDelegate.swift */; };
@@ -16,10 +16,11 @@
 		AAB3CA44296EE8B7006D872E /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA43296EE8B7006D872E /* HabitsStore.swift */; };
 		AAB3CA47296EE96C006D872E /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA46296EE96C006D872E /* Habits.swift */; };
 		AAB3CA4B296EED4C006D872E /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */; };
+		AAC01C0329742DCF0088F6D9 /* HabitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC01C0229742DCF0088F6D9 /* HabitsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA4DAB6329703DEC00B1119C /* HabitsCollectioViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsCollectioViewCell.swift; sourceTree = "<group>"; };
+		AA73181029765DD6002C9E3B /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		AAA7A168297190A800001544 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AAB3CA2C296EE759006D872E /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB3CA2F296EE759006D872E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		AAB3CA43296EE8B7006D872E /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
 		AAB3CA46296EE96C006D872E /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
 		AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		AAC01C0229742DCF0088F6D9 /* HabitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +57,10 @@
 		AAA7A1672971906500001544 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AA4DAB6329703DEC00B1119C /* HabitsCollectioViewCell.swift */,
 				AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */,
+				AA73181029765DD6002C9E3B /* HabitViewController.swift */,
 				AAA7A168297190A800001544 /* InfoViewController.swift */,
+				AAC01C0229742DCF0088F6D9 /* HabitsCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,10 +175,11 @@
 			files = (
 				AAB3CA44296EE8B7006D872E /* HabitsStore.swift in Sources */,
 				AAB3CA47296EE96C006D872E /* Habits.swift in Sources */,
+				AA73181129765DD6002C9E3B /* HabitViewController.swift in Sources */,
 				AAB3CA4B296EED4C006D872E /* HabitsViewController.swift in Sources */,
+				AAC01C0329742DCF0088F6D9 /* HabitsCollectionViewCell.swift in Sources */,
 				AAA7A169297190A800001544 /* InfoViewController.swift in Sources */,
 				AAB3CA30296EE759006D872E /* AppDelegate.swift in Sources */,
-				AA4DAB6429703DEC00B1119C /* HabitsCollectioViewCell.swift in Sources */,
 				AAB3CA32296EE759006D872E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
