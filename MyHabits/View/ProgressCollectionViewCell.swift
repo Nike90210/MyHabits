@@ -14,7 +14,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
 
     lazy var progresslabelName: UILabel = {
         let progessLabelName = UILabel()
-        progessLabelName.backgroundColor = .systemGray
+        progessLabelName.tintColor = .systemGray
         progessLabelName.font = UIFont.systemFont(ofSize: 13)
         progessLabelName.numberOfLines = 1
         progessLabelName.text = "Все получилось"
@@ -24,10 +24,11 @@ class ProgressCollectionViewCell: UICollectionViewCell {
 
     lazy var progressPercentage: UILabel = {
         let progressPercentage = UILabel()
-        progressPercentage.backgroundColor = .systemGray
+        progressPercentage.tintColor = .systemGray
         progressPercentage.font = UIFont.systemFont(ofSize: 13)
         progressPercentage.numberOfLines = 1
         progressPercentage.translatesAutoresizingMaskIntoConstraints = false
+        progressPercentage.text = "0.0"
         return progressPercentage
     }()
 
@@ -44,6 +45,8 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         baseView.addSubview(progresslabelName)
         baseView.addSubview(progressPercentage)
         baseView.addSubview(progressView)
+        baseView.clipsToBounds = true
+        baseView.layer.cornerRadius = 8
         baseView.translatesAutoresizingMaskIntoConstraints = false
         return baseView
     }()
@@ -61,8 +64,8 @@ extension ProgressCollectionViewCell {
     func constrancsSetUp(){
         NSLayoutConstraint.activate([
             baseView.topAnchor.constraint(equalTo: topAnchor, constant: 22),
-            baseView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            baseView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            baseView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
+            baseView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -2),
             baseView.heightAnchor.constraint(equalToConstant: 60),
 
             progresslabelName.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 10),
@@ -71,10 +74,10 @@ extension ProgressCollectionViewCell {
             progressView.topAnchor.constraint(equalTo: progresslabelName.bottomAnchor, constant: 10),
             progressView.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: 12),
             progressView.heightAnchor.constraint(equalToConstant: 7),
-            progressView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32 - 24),
+            progressView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 34 - 30),
 
             progressPercentage.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 12),
-            progressPercentage.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: UIScreen.main.bounds.width - 32 - 24)
+            progressPercentage.leadingAnchor.constraint(equalTo: baseView.leadingAnchor, constant: UIScreen.main.bounds.width - 34 - 30)
         ])
     }
 }

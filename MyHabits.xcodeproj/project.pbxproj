@@ -59,9 +59,6 @@
 		AAA7A1672971906500001544 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */,
-				AA73181029765DD6002C9E3B /* HabitViewController.swift */,
-				AAA7A168297190A800001544 /* InfoViewController.swift */,
 				AAC01C0229742DCF0088F6D9 /* HabitsCollectionViewCell.swift */,
 				AA7BCD242976CC6F0010F945 /* ProgressCollectionViewCell.swift */,
 			);
@@ -87,6 +84,7 @@
 		AAB3CA2E296EE759006D872E /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				AAEC50842978200600795818 /* Controllers */,
 				AAA7A1672971906500001544 /* View */,
 				AAA7A1662971902B00001544 /* Model */,
 				AAB3CA45296EE8C1006D872E /* Supports */,
@@ -104,6 +102,16 @@
 				AAB3CA38296EE75B006D872E /* Assets.xcassets */,
 			);
 			path = Supports;
+			sourceTree = "<group>";
+		};
+		AAEC50842978200600795818 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA73181029765DD6002C9E3B /* HabitViewController.swift */,
+				AAA7A168297190A800001544 /* InfoViewController.swift */,
+				AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

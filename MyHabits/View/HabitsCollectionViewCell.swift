@@ -47,7 +47,8 @@ class HabitsCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = .systemGray
+        self.layer.cornerRadius = 8
+        backgroundColor = .white
         contentView.addSubview(habitsLabele)
         contentView.addSubview(habitsFootNote)
         contentView.addSubview(habitsCount)
