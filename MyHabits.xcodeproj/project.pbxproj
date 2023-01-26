@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA209BB7297EBF9100F8F932 /* DetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA209BB6297EBF9100F8F932 /* DetailHeaderCell.swift */; };
+		AA209BB9297EC1F700F8F932 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA209BB8297EC1F700F8F932 /* DateTableViewCell.swift */; };
+		AA2B42BC297D6D4E00CC325B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B42BB297D6D4E00CC325B /* DetailViewController.swift */; };
+		AA73181129765DD6002C9E3B /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73181029765DD6002C9E3B /* HabitViewController.swift */; };
+		AA7BCD252976CC6F0010F945 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7BCD242976CC6F0010F945 /* ProgressCollectionViewCell.swift */; };
+		AAA7A169297190A800001544 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7A168297190A800001544 /* InfoViewController.swift */; };
 		AAB3CA30296EE759006D872E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA2F296EE759006D872E /* AppDelegate.swift */; };
 		AAB3CA32296EE759006D872E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA31296EE759006D872E /* SceneDelegate.swift */; };
-		AAB3CA34296EE759006D872E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA33296EE759006D872E /* ViewController.swift */; };
-		AAB3CA37296EE759006D872E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB3CA35296EE759006D872E /* Main.storyboard */; };
 		AAB3CA39296EE75B006D872E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAB3CA38296EE75B006D872E /* Assets.xcassets */; };
 		AAB3CA3C296EE75B006D872E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB3CA3A296EE75B006D872E /* LaunchScreen.storyboard */; };
+		AAB3CA44296EE8B7006D872E /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA43296EE8B7006D872E /* HabitsStore.swift */; };
+		AAB3CA47296EE96C006D872E /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA46296EE96C006D872E /* Habits.swift */; };
+		AAB3CA4B296EED4C006D872E /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */; };
+		AAC01C0329742DCF0088F6D9 /* HabitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC01C0229742DCF0088F6D9 /* HabitsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA209BB6297EBF9100F8F932 /* DetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderCell.swift; sourceTree = "<group>"; };
+		AA209BB8297EC1F700F8F932 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		AA2B42BB297D6D4E00CC325B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AA73181029765DD6002C9E3B /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		AA7BCD242976CC6F0010F945 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
+		AAA7A168297190A800001544 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AAB3CA2C296EE759006D872E /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB3CA2F296EE759006D872E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAB3CA31296EE759006D872E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AAB3CA33296EE759006D872E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AAB3CA36296EE759006D872E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAB3CA38296EE75B006D872E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAB3CA3B296EE75B006D872E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAB3CA3D296EE75B006D872E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAB3CA43296EE8B7006D872E /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
+		AAB3CA46296EE96C006D872E /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
+		AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		AAC01C0229742DCF0088F6D9 /* HabitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +53,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAA7A1662971902B00001544 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAB3CA46296EE96C006D872E /* Habits.swift */,
+				AAB3CA43296EE8B7006D872E /* HabitsStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAA7A1672971906500001544 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAC01C0229742DCF0088F6D9 /* HabitsCollectionViewCell.swift */,
+				AA7BCD242976CC6F0010F945 /* ProgressCollectionViewCell.swift */,
+				AA209BB6297EBF9100F8F932 /* DetailHeaderCell.swift */,
+				AA209BB8297EC1F700F8F932 /* DateTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AAB3CA23296EE758006D872E = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +92,35 @@
 		AAB3CA2E296EE759006D872E /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
-				AAB3CA2F296EE759006D872E /* AppDelegate.swift */,
-				AAB3CA31296EE759006D872E /* SceneDelegate.swift */,
-				AAB3CA33296EE759006D872E /* ViewController.swift */,
-				AAB3CA35296EE759006D872E /* Main.storyboard */,
-				AAB3CA38296EE75B006D872E /* Assets.xcassets */,
-				AAB3CA3A296EE75B006D872E /* LaunchScreen.storyboard */,
+				AAEC50842978200600795818 /* Controllers */,
+				AAA7A1672971906500001544 /* View */,
+				AAA7A1662971902B00001544 /* Model */,
+				AAB3CA45296EE8C1006D872E /* Supports */,
 				AAB3CA3D296EE75B006D872E /* Info.plist */,
 			);
 			path = MyHabits;
+			sourceTree = "<group>";
+		};
+		AAB3CA45296EE8C1006D872E /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				AAB3CA3A296EE75B006D872E /* LaunchScreen.storyboard */,
+				AAB3CA31296EE759006D872E /* SceneDelegate.swift */,
+				AAB3CA2F296EE759006D872E /* AppDelegate.swift */,
+				AAB3CA38296EE75B006D872E /* Assets.xcassets */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		AAEC50842978200600795818 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA73181029765DD6002C9E3B /* HabitViewController.swift */,
+				AAA7A168297190A800001544 /* InfoViewController.swift */,
+				AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */,
+				AA2B42BB297D6D4E00CC325B /* DetailViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +183,6 @@
 			files = (
 				AAB3CA3C296EE75B006D872E /* LaunchScreen.storyboard in Resources */,
 				AAB3CA39296EE75B006D872E /* Assets.xcassets in Resources */,
-				AAB3CA37296EE759006D872E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB3CA34296EE759006D872E /* ViewController.swift in Sources */,
+				AAB3CA44296EE8B7006D872E /* HabitsStore.swift in Sources */,
+				AA209BB7297EBF9100F8F932 /* DetailHeaderCell.swift in Sources */,
+				AAB3CA47296EE96C006D872E /* Habits.swift in Sources */,
+				AA209BB9297EC1F700F8F932 /* DateTableViewCell.swift in Sources */,
+				AA73181129765DD6002C9E3B /* HabitViewController.swift in Sources */,
+				AAB3CA4B296EED4C006D872E /* HabitsViewController.swift in Sources */,
+				AAC01C0329742DCF0088F6D9 /* HabitsCollectionViewCell.swift in Sources */,
+				AA7BCD252976CC6F0010F945 /* ProgressCollectionViewCell.swift in Sources */,
+				AAA7A169297190A800001544 /* InfoViewController.swift in Sources */,
+				AA2B42BC297D6D4E00CC325B /* DetailViewController.swift in Sources */,
 				AAB3CA30296EE759006D872E /* AppDelegate.swift in Sources */,
 				AAB3CA32296EE759006D872E /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AAB3CA35296EE759006D872E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAB3CA36296EE759006D872E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AAB3CA3A296EE75B006D872E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +348,7 @@
 				INFOPLIST_FILE = MyHabits/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +356,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.medey90-mail.MyHabits";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,9 +377,7 @@
 				INFOPLIST_FILE = MyHabits/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,6 +385,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.medey90-mail.MyHabits";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
