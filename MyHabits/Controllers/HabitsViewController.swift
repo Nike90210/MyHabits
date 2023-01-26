@@ -49,6 +49,8 @@ class HabitsViewController: UIViewController{
         addConstrains()
         navigationBar()
         collectionView.reloadData()
+        let changePostionLongPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        collectionView.addGestureRecognizer(changePostionLongPress)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +62,26 @@ class HabitsViewController: UIViewController{
         let hvc = UINavigationController(rootViewController: HabitViewController())
         hvc.modalPresentationStyle = .fullScreen
         present(hvc, animated: true)
+    }
+
+    @objc func longPress(_ sender: UILongPressGestureRecognizer){
+        let longPress = sender.location(in: collectionView)
+        switch sender.state {
+        case .began:
+            if let item = collectionView.indexPathForItem(at: longPress){
+                self.collectionView.beginInteractiveMovementForItem(at: item)
+            }else {
+                return
+            }
+        case .changed:
+            self.collectionView.updateInteractiveMovementTargetPosition(longPress)
+        case .ended:
+            self.collectionView.endInteractiveMovement()
+        case .cancelled:
+            self.collectionView.cancelInteractiveMovement()
+        @unknown default:
+            return
+        }
     }
 }
 

@@ -68,8 +68,8 @@ extension ProgressCollectionViewCell {
     func constrancsSetUp(){
         NSLayoutConstraint.activate([
             baseView.topAnchor.constraint(equalTo: topAnchor, constant: 22),
-            baseView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
-            baseView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -2),
+            baseView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
+            baseView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
             baseView.heightAnchor.constraint(equalToConstant: 60),
 
             progresslabelName.topAnchor.constraint(equalTo: baseView.topAnchor, constant: 10),
