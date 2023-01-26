@@ -9,7 +9,7 @@ import UIKit
 
 class HabitsViewController: UIViewController{
 
-  
+    var storeHabits = HabitsStore.shared
 
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -21,7 +21,7 @@ class HabitsViewController: UIViewController{
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = .lightText
         collectionView.register(HabitsCollectionViewCell.self, forCellWithReuseIdentifier: HabitsCollectionViewCell.collectionCellID)
-        collectionView.register(ProgressCollectionViewCell.self, forCellWithReuseIdentifier: ProgressCollectionViewCell.progressID)
+        collectionView.register(ProgressCollectionViewCell.self,forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProgressCollectionViewCell.progressID)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +35,7 @@ class HabitsViewController: UIViewController{
         navigationItem.scrollEdgeAppearance = navigationBarItem
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance = navigationBarItem
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarItem
         navigationController?.navigationBar.tintColor = UIColor.black
         title = "Сегодня"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createHabit))
@@ -47,6 +48,12 @@ class HabitsViewController: UIViewController{
         self.view.addSubview(collectionView)
         addConstrains()
         navigationBar()
+        collectionView.reloadData()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
 
     @objc func createHabit(){
@@ -71,28 +78,48 @@ extension HabitsViewController{
 
 extension HabitsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProgressCollectionViewCell.progressID, for: indexPath) as! ProgressCollectionViewCell
+        header.headerConfiguration(storeHabits)
+        return header
+    }
+
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        if indexPath.section == 0 {
-            let cellHeader = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionViewCell.progressID, for: indexPath) as! ProgressCollectionViewCell
-            return cellHeader
-        }else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitsCollectionViewCell.collectionCellID, for: indexPath) as! HabitsCollectionViewCell
-            return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitsCollectionViewCell.collectionCellID, for: indexPath) as! HabitsCollectionViewCell
+        cell.setupCell(storeHabits.habits[indexPath.item]) {
+            self.collectionView.reloadData()
         }
+        cell.layer.cornerRadius = 8
+        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        storeHabits.habits.count
     }
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let hdvc = DetailViewController()
+        hdvc.habit = storeHabits.habits[indexPath.row]
+        hdvc.numberOfIndex = indexPath.row
+        navigationController?.pushViewController(hdvc, animated: true)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let item = HabitsStore.shared.habits.remove(at: sourceIndexPath.item)
+        HabitsStore.shared.habits.insert(item, at: destinationIndexPath.item)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width,height: 90)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width - 32), height: 130)
+        return CGSize(width: UIScreen.main.bounds.width - 32,height: 130)
     }
 
 }

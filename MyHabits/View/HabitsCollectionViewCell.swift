@@ -11,6 +11,10 @@ class HabitsCollectionViewCell: UICollectionViewCell {
 
     static let collectionCellID = "CollectionID"
 
+    private var habit: Habit!
+
+    private var onImageStatusAction: (() -> ())!
+
     lazy var habitsLabele: UILabel = {
         let habitsLabel = UILabel()
         habitsLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
@@ -39,7 +43,7 @@ class HabitsCollectionViewCell: UICollectionViewCell {
         let imageLabel = UIImageView()
         imageLabel.image = UIImage(named: "circle")
         imageLabel.isUserInteractionEnabled = true
-        imageLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toDetailVC)))
+        imageLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageStatusAction)))
         imageLabel.translatesAutoresizingMaskIntoConstraints = false
         return imageLabel
     }()
@@ -56,9 +60,6 @@ class HabitsCollectionViewCell: UICollectionViewCell {
         constrainsForLabels()
     }
 
-    @objc func toDetailVC(){
-
-    }
 
     private func constrainsForLabels(){
         NSLayoutConstraint.activate([
@@ -73,13 +74,34 @@ class HabitsCollectionViewCell: UICollectionViewCell {
             habitsCount.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: 110),
 
             imageLabel.centerYAnchor.constraint(equalTo: contentView.topAnchor, constant: 65),
-            imageLabel.trailingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: UIScreen.main.bounds.width - 32 - 25),
+            imageLabel.trailingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: UIScreen.main.bounds.width - 30 - 22),
             imageLabel.heightAnchor.constraint(equalToConstant: 38),
             imageLabel.widthAnchor.constraint(equalToConstant: 38),
-            imageLabel.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: 110),
-            imageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
         ])
     }
+
+    func setupCell(_ habit: Habit, onImageStatusAction: @escaping () -> ()) {
+        self.habit = habit
+        self.onImageStatusAction = onImageStatusAction
+        habitsFootNote.text = habit.dateString
+        habitsLabele.text = habit.name
+        habitsLabele.textColor = habit.color
+        habitsCount.text = "Счетчик: \(habit.trackDates.count)"
+        if habit.isAlreadyTakenToday {
+            imageLabel.image = UIImage(systemName: "checkmark.circle.fill")
+        } else {
+            imageLabel.image = UIImage(systemName: "circle")
+        }
+        imageLabel.tintColor = habit.color
+    }
+
+    @objc func imageStatusAction() {
+        guard !habit.isAlreadyTakenToday else {return}
+        imageLabel.image = UIImage(systemName: "checkmark.circle.fill")
+        HabitsStore.shared.track(habit)
+        onImageStatusAction()
+    }
+
 
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA209BB7297EBF9100F8F932 /* DetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA209BB6297EBF9100F8F932 /* DetailHeaderCell.swift */; };
+		AA209BB9297EC1F700F8F932 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA209BB8297EC1F700F8F932 /* DateTableViewCell.swift */; };
+		AA2B42BC297D6D4E00CC325B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B42BB297D6D4E00CC325B /* DetailViewController.swift */; };
 		AA73181129765DD6002C9E3B /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73181029765DD6002C9E3B /* HabitViewController.swift */; };
 		AA7BCD252976CC6F0010F945 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7BCD242976CC6F0010F945 /* ProgressCollectionViewCell.swift */; };
 		AAA7A169297190A800001544 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7A168297190A800001544 /* InfoViewController.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA209BB6297EBF9100F8F932 /* DetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderCell.swift; sourceTree = "<group>"; };
+		AA209BB8297EC1F700F8F932 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		AA2B42BB297D6D4E00CC325B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AA73181029765DD6002C9E3B /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		AA7BCD242976CC6F0010F945 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAA7A168297190A800001544 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +67,8 @@
 			children = (
 				AAC01C0229742DCF0088F6D9 /* HabitsCollectionViewCell.swift */,
 				AA7BCD242976CC6F0010F945 /* ProgressCollectionViewCell.swift */,
+				AA209BB6297EBF9100F8F932 /* DetailHeaderCell.swift */,
+				AA209BB8297EC1F700F8F932 /* DateTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 				AA73181029765DD6002C9E3B /* HabitViewController.swift */,
 				AAA7A168297190A800001544 /* InfoViewController.swift */,
 				AAB3CA4A296EED4C006D872E /* HabitsViewController.swift */,
+				AA2B42BB297D6D4E00CC325B /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,12 +194,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAB3CA44296EE8B7006D872E /* HabitsStore.swift in Sources */,
+				AA209BB7297EBF9100F8F932 /* DetailHeaderCell.swift in Sources */,
 				AAB3CA47296EE96C006D872E /* Habits.swift in Sources */,
+				AA209BB9297EC1F700F8F932 /* DateTableViewCell.swift in Sources */,
 				AA73181129765DD6002C9E3B /* HabitViewController.swift in Sources */,
 				AAB3CA4B296EED4C006D872E /* HabitsViewController.swift in Sources */,
 				AAC01C0329742DCF0088F6D9 /* HabitsCollectionViewCell.swift in Sources */,
 				AA7BCD252976CC6F0010F945 /* ProgressCollectionViewCell.swift in Sources */,
 				AAA7A169297190A800001544 /* InfoViewController.swift in Sources */,
+				AA2B42BC297D6D4E00CC325B /* DetailViewController.swift in Sources */,
 				AAB3CA30296EE759006D872E /* AppDelegate.swift in Sources */,
 				AAB3CA32296EE759006D872E /* SceneDelegate.swift in Sources */,
 			);

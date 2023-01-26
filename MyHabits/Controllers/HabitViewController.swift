@@ -10,6 +10,7 @@ import UIKit
 class HabitViewController: UIViewController {
 
     var habit: Habit?
+    var numberOfIndex: Int?
     
     lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
@@ -20,7 +21,7 @@ class HabitViewController: UIViewController {
         return nameLabel
     }()
 
-    // работа над TextField начнется с 21.01.2023
+
     lazy var habitText: UITextField = {
         let habitText = UITextField()
         habitText.placeholder = "Бегать по утрам, спать 8 часов и т.п."
@@ -104,9 +105,8 @@ class HabitViewController: UIViewController {
         datePicker.locale = .current
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.addTarget(self, action: #selector(actionForPicker), for: .allEvents)
-        datePicker.datePickerMode = .time
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        if let habit = habit{
+        if let habit = habit {
             datePicker.date = habit.date
         }else{
             datePicker.date = Date()
@@ -119,11 +119,15 @@ class HabitViewController: UIViewController {
         removeHabit.setTitle("Удалить привычку", for: .normal)
         removeHabit.setTitleColor(UIColor?(.systemRed), for: .normal)
         removeHabit.translatesAutoresizingMaskIntoConstraints = false
+        removeHabit.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(removeHabitAction)))
+        if let habit = habit{
+            return removeHabit
+        }else{
+            removeHabit.isHidden = true
+        }
         return removeHabit
     }()
-    
-    
-    
+
     private func navigationBar(){
         let navigationAperrance = UINavigationBarAppearance()
         navigationAperrance.titleTextAttributes = [.foregroundColor: UIColor.systemPurple]
@@ -137,7 +141,38 @@ class HabitViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = .systemPurple
         title = "Создать"
     }
-    
+
+
+    @objc func saveButton(){
+
+        guard let isText = habitText.text else { return }
+        guard isText != "" else { return }
+        if habit != nil{
+            guard let index = numberOfIndex else { return }
+            HabitsStore.shared.habits[index] = Habit(name: habitText.text ?? "", date: datePicker.date, color: pickColor.backgroundColor ?? color)
+            self.navigationController?.popToRootViewController(animated: true)
+        }else {
+            let anotherHabit = Habit(name: habitText.text ?? "", date: datePicker.date, color: pickColor.backgroundColor ?? color)
+            let habitStore = HabitsStore.shared
+            habitStore.habits.append(anotherHabit)
+            dismiss(animated: true)
+        }
+    }
+
+    @objc func removeHabitAction(){
+        let alertControoler = UIAlertController(title: "Удалить привычку", message: "вы уверены, что хотите удалить привычку \(habit?.name ?? " привычка ? ")", preferredStyle: .alert)
+        alertControoler.addAction(UIAlertAction(title: "Отменить", style: .cancel){ _ in
+            alertControoler.dismiss(animated: true)
+        })
+
+        alertControoler.addAction(UIAlertAction(title: "Удалить", style: .destructive){_ in
+            guard let numberIndex = self.numberOfIndex else { return }
+            HabitsStore.shared.habits.remove(at: numberIndex)
+            self.navigationController?.popToRootViewController(animated: true)
+        })
+        present(alertControoler, animated: true)
+    }
+
     @objc func actionForPicker(){
         timeOfClockLabel.text = dataFormatter.string(from: datePicker.date)
     }
@@ -150,12 +185,14 @@ class HabitViewController: UIViewController {
     }
     
     @objc func cancelButton(){
-        dismiss(animated: true)
+
+        if habit != nil{
+            self.navigationController?.popViewController(animated: true)
+        }else{
+            dismiss(animated: true)
+        }
     }
-    
-    @objc func saveButton(){
-        
-    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -166,7 +203,7 @@ class HabitViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         view.addSubview(nameLabel)
-       view.addSubview(habitText)
+        view.addSubview(habitText)
         view.addSubview(colorLabel)
         view.addSubview(pickColor)
         view.addSubview(timeLabel)

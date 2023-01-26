@@ -10,12 +10,12 @@ import UIKit
 class ProgressCollectionViewCell: UICollectionViewCell {
 
 
-    static let progressID = "progressID"
+    static var progressID = "progressID"
 
     lazy var progresslabelName: UILabel = {
         let progessLabelName = UILabel()
         progessLabelName.tintColor = .systemGray
-        progessLabelName.font = UIFont.systemFont(ofSize: 13)
+        progessLabelName.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         progessLabelName.numberOfLines = 1
         progessLabelName.text = "Все получилось"
         progessLabelName.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,6 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         progressPercentage.font = UIFont.systemFont(ofSize: 13)
         progressPercentage.numberOfLines = 1
         progressPercentage.translatesAutoresizingMaskIntoConstraints = false
-        progressPercentage.text = "0.0"
         return progressPercentage
     }()
 
@@ -55,6 +54,11 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         addSubview(baseView)
         constrancsSetUp()
+    }
+
+    func headerConfiguration(_ store: HabitsStore) {
+        progressPercentage.text = "\(Int(store.todayProgress * 100))%"
+        progressView.setProgress(store.todayProgress, animated: true)
     }
 
 }
